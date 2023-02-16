@@ -1,9 +1,6 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
-
-app.use(cors())
 
 app.get('/', (req, res) => {
     console.log(res)
@@ -17,13 +14,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/hello', (req, res) => {
-
     res.send( 'HelloWorld!' )
     res.json({
         success: true,
     });
-
 });
+
 app.listen(port, () => {
     console.log(`server is listening at localhost:${process.env.PORT}`);
 });
